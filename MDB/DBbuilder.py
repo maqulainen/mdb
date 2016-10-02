@@ -129,13 +129,14 @@ def get_imdb_data(filename, queue, exit_now):
         print "thread done", filename
         return
 
-    if (response.json['Response'] == 'True'):
+    response_data = response.json()
+    if (response_data['Response'] == 'True'):
         if (exit_now.is_set()):
             print "thread saw exit_now", filename
             queue.put((None, filename, True))
             return
-        process_img(response.json['Poster'], filename)
-        queue.put((response.json, filename, False))
+        process_img(response_data['Poster'], filename)
+        queue.put((response_data, filename, False))
         #print "thread done", filename
         return
     else:
