@@ -58,7 +58,7 @@ db_file = os.path.join(mdb_dir, u'mdbdata.sqlite')
 images_folder = os.path.join(mdb_dir, u'images')
 config_file_path = os.path.join(mdb_dir, u'.config')
 
-api_url = 'http://www.imdbapi.com'
+api_url = 'http://www.omdbapi.com'
 api_movie_param = 't'
 api_extra_opts = {}  # '&plot=full'
 
